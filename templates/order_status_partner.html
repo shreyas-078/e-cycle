@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Cycle Partner Help</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/order_status_partner.css') }}">
+</head>
+
+<body>
+  <header class="navbar">
+    <img src="{{ url_for('static', filename='images/logo-1.png') }}" alt="E Cycle Logo" />
+
+    <h1 class="dash-heading">Partner Help</h1>
+    <div class="user-info"></div>
+  </header>
+  <div class="map-sidebar-container">
+    <aside class="sidebar">
+      <ul>
+        <li>
+          <a href="/dashboard/{{ current_user.username }}">
+            Home
+          </a>
+        </li>
+
+        {% if role == 'User' %}
+        <li>
+          <a href="/pickup">
+            Schedule a Pickup
+          </a>
+        </li>
+        <li>
+          <a href="/track-pickup">
+            Track my Pickup
+          </a>
+        </li>
+        {% endif %}
+
+        {% if role == 'Delivery Partner' %}
+        <li>
+          <a href="/listen_orders">
+            Listen for Orders
+          </a>
+        </li>
+        {% endif %}
+        <li>
+          <a href="/history">
+            History
+          </a>
+        </li>
+        <li>
+          <a href="/rewards">
+            Rewards
+          </a>
+        </li>
+        <li>
+          <a href="https://ewastemonitor.info/">
+            Analytics
+          </a>
+        </li>
+
+        <li>
+          <a href="/recycle-centres">
+            Recycling Centers
+          </a>
+        </li>
+
+        <li>
+          <a href="/support">
+            Help & Support
+          </a>
+        </li>
+        <li>
+          <a href="/logout">
+            Logout
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <div id="map"></div>
+  </div>
+  <div id="below-map-container">
+    <div id="order-id-div">Order Id: <span>{{ orderid }}</span></div>
+    <div id="items-div">Items: {{items}}</div>
+    <div style="display:flex;gap:1.5rem;justify-content: center;">
+      <button id="mark-pickup" onClick="markPickup()">Mark as Picked Up</button>
+      <button id="mark-delivered" onClick="markDelivered()">Mark as Delivered</button>
+    </div>
+  </div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRNYfkaFI8aPMugQ30biZ1WqZWpTZTc-I&libraries=places&loading=async&callback=initMap"
+    defer>
+    </script>
+  <script>
+    const userorderId = {
+      orderId: "{{ orderid }}"
+    };
+  </script>
+  <script src="{{ url_for('static', filename='js/order_status_partner.js') }}"></script>
+</body>
+
+</html>

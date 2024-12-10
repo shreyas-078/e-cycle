@@ -1,0 +1,105 @@
+body {
+  font-family: 'Geist', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: #141414;
+  color: #ffffff;
+  margin-top: 4rem;
+}
+
+header {
+  width: 100%;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+main {
+  width: 80%;
+  max-width: 400px;
+  margin: 2rem auto;
+  background-color: #141414;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+p {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #3498db;
+  color: white;
+  position: fixed;
+  bottom: 0;
+}
+
+img {
+  height: 12rem;
+  width: 12rem;
+}

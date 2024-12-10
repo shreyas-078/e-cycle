@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome {{ current_user.username }}!</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon" />
+</head>
+
+<body>
+  <header class="navbar">
+    <img src="{{ url_for('static', filename='images/logo-1.png') }}" alt="E Cycle Logo" />
+
+    <h1 class="dash-heading">Dashboard</h1>
+    <div class="user-info">Welcome, {{ current_user.username }}</div>
+  </header>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <ul>
+        <li>
+          <a href="/dashboard/{{ current_user.username }}">
+            Home
+          </a>
+        </li>
+
+        {% if current_user.role == 'User' %}
+        <li>
+          <a href="/pickup">
+            Schedule a Pickup
+          </a>
+        </li>
+        <li>
+          <a href="/track-pickup">
+            Track my Pickup
+          </a>
+        </li>
+        <li>
+          <a href="/rewards">
+            Rewards
+          </a>
+        </li>
+        {% endif %}
+
+        {% if current_user.role == 'Delivery Partner' %}
+        <li>
+          <a href="/listen_orders">
+            Listen for Orders
+          </a>
+        </li>
+        {% endif %}
+        <li>
+          <a href="/history">
+            History
+          </a>
+        </li>
+        <li>
+          <a href="https://ewastemonitor.info/">
+            Analytics
+          </a>
+        </li>
+
+        <li>
+          <a href="/recycle-centres">
+            Recycling Centers
+          </a>
+        </li>
+
+        <li>
+          <a href="/support">
+            Help & Support
+          </a>
+        </li>
+        <li>
+          <a href="/logout">
+            Logout
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <div id="cards">
+      {% if current_user.role != 'Delivery Partner' %}
+      <div class="card" id="card-1">
+        <div class="card-content">
+          <div class="card-image">
+            <div id="cont" data-pct="100">
+              <svg id="svg" width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background Circle -->
+                <circle r="70" cx="75" cy="75" fill="transparent" stroke="#e6e6e6" stroke-width="10">
+                </circle>
+                <!-- Progress Bar Circle -->
+                <circle id="bar" r="70" cx="75" cy="75" fill="transparent" stroke="#3498db" stroke-width="10"
+                  stroke-dasharray="439.82" stroke-dashoffset="439.82" transform="rotate(-90 75 75)">
+                </circle>
+              </svg>
+            </div>
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <i class="fa-duotone fa-apartment"></i>
+              <div class="card-info-title">
+                <h3>Your Next Milestone</h3>
+                <h4>
+                  You are just <span class="pts-left"></span> Kilos away from your next milestone! Keep
+                  recycling to earn more points.
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      <div class="card" id="card-2">
+        <div class="card-content">
+          <div class="card-image">
+            <div id="graph"></div>
+            <!-- Insert graph -->
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+
+              <div class="card-info-title">
+                <div class="card-img">
+                  <img src="{{ url_for('static', filename='images/analytics.gif') }}" class="analytics-logo"
+                    alt="analytics-logo" />
+                </div>
+                <h3>Overall Statistics</h3>
+
+                <h4>
+                  This graph provides insights into e-waste/yr, helping you track performance trends and
+                  make informed decisions effectively.
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% if current_user.role != 'Delivery Partner' %}
+      <div class="card" id="card-3">
+        <div class="card-content">
+          <div class="grid">
+            <div class="box-pro">
+              <div class="title">Pro</div>
+              <div class="price">
+                <b>₹199</b>
+                <div>per month</div>
+              </div>
+              <div class="features">
+                <div>Priority Pick-up</div>
+                <div>Earn 25% More Reward Points </div>
+                <div>Extended Coverage Area for Pickup
+                </div>
+                <div>Access to Full Sustainability Resource E-Library</div>
+              </div>
+              <button>Learn More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      <div class="card" id="card-4">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="{{ url_for('static', filename='images/follow.jpg') }}" alt="Secure Gif" class="secure" />
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <i class="fa-duotone fa-person-from-portal"></i>
+              <div class="card-info-title">
+                <h3>Follow Us</h3>
+                <h4>
+
+                  Follow us on all our social media platforms for the latest news. Join our
+                  community towards e-waste revolution.
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="card-5">
+        <div class="card-content">
+          <div class="card-img1">
+            <img src="{{ url_for('static', filename='images/feedback.png') }}" alt="community png" class="community" />
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <div class="card-info-title">
+                <h3>Suggestions</h3>
+                <h4>
+                  Click here to provide feedback on improvements regarding the web-app.
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% if current_user.role != 'Delivery Partner' %}
+      <div class="card" id="card-6">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="{{ url_for('static', filename='images/image.png') }}" alt="Tracking Gif" class="tracking" />
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <div class="card-info-title">
+                <h3>Rewards</h3>
+                <h4>
+                  You have <span id="reward-pts"></span> reward points in your wallet
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% if current_user.role == 'Delivery Partner' %}
+      <div class="card" id="card-7">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="{{ url_for('static', filename='images/merch.png') }}" alt="Tracking Gif" class="tracking" />
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <div class="card-info-title">
+                <h3>Merchandise</h3>
+                <h4>
+                  Stay updated on the uniforms and vehicle color codes.
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% if current_user.role == 'Delivery Partner' %}
+      <div class="card" id="card-8">
+        <div class="card-content">
+          <div class="card-image">
+            <i class="fa-duotone fa-unicorn"></i>
+            <img src="{{ url_for('static', filename='images/coin.gif') }}" alt="Coin" class="reward-coin">
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <div class="card-info-title">
+                <h3>Earnings</h3>
+                <h4>
+                  You have total earnings of ₹201.00 in your wallet.
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% if current_user.role == 'Delivery Partner' %}
+      <div class="card" id="card-9">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="{{ url_for('static', filename='images/rating.png') }}" alt="Tracking Gif" class="tracking" />
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <div class="card-info-title">
+                <h3>Rating</h3>
+                <h4>
+                  View your ratings and feedback here to track your performance.
+                  Your dedication to responsible service helps ensure customer satisfaction.
+
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <script>
+    current_user = {
+      "user_id": "{{ current_user.user_id }}",
+      "reward_pts": "{{current_user.reward_pts}}",
+      "weight": "{{current_user.weight}}"
+    }
+  </script>
+  <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+
+</body>
+
+</html>

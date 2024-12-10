@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/rewards.css') }}" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rewards</title>
+</head>
+<header class="navbar">
+  <img src="{{ url_for('static', filename='images/logo-1.png') }}" alt="E Cycle Logo" />
+
+  <h1 class="dash-heading">Redeem Your Rewards</h1>
+  <div class="user-pts-container">Your Points: <span id="user-pts">{{ current_user.reward_pts }}</span></div>
+</header>
+
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <ul>
+        <li>
+          <a href="/dashboard/{{ current_user.username }}">
+            Home
+          </a>
+        </li>
+
+        {% if current_user.role == 'User' %}
+        <li>
+          <a href="/pickup">
+            Schedule a Pickup
+          </a>
+        </li>
+        <li>
+          <a href="/track-pickup">
+            Track my Pickup
+          </a>
+        </li>
+
+        <li>
+          <a href="/rewards">
+            Rewards
+          </a>
+        </li>
+        {% endif %}
+
+        {% if current_user.role == 'Delivery Partner' %}
+        <li>
+          <a href="/listen_orders">
+            Listen for Orders
+          </a>
+        </li>
+        {% endif %}
+        <li>
+          <a href="/history">
+            History
+          </a>
+        </li>
+
+        <li>
+          <a href="https://ewastemonitor.info/">
+            Analytics
+          </a>
+        </li>
+
+        <li>
+          <a href="/recycle-centres">
+            Recycling Centers
+          </a>
+        </li>
+
+        <li>
+          <a href="/support">
+            Help & Support
+          </a>
+        </li>
+        <li>
+          <a href="/logout">
+            Logout
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <div id="cards">
+      <div class="card" id="card-1">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="{{ url_for('static', filename='images/zepto.png') }}" />
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <div class="card-info-title">
+                <h3>Zepto Gift Card</h3>
+                <h4>
+                  Zepto is the perfect way to enjoy the convenience of quick grocery deliveries. Whether
+                  it’s fresh fruits, vegetables, dairy,
+                  or daily essentials.
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="card-2">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="{{ url_for('static', filename='images/decathlon.webp') }}" alt="E Cycle Logo" />
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <div class="card-info-title">
+                <h3>Decathlon Gift Card
+                  <h4>
+                    Decathlon is a gateway to a world of sports. With this card, recipients
+                    can shop for quality gear, apparel, and accessories tailored to over 70 sports.
+                </h3>
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="card-3">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="{{ url_for('static', filename='images/flipkart.png') }}" alt="E Cycle Logo" />
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <div class="card-info-title">
+                <h3>Flipkart Gift Card</h3>
+                <h4>
+                  Flipkart opens the doors to one of India’s largest online marketplaces with access
+                  ranging from electronics and fashion to books and home
+                  essentials.
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="card-4">
+        <div class="card-content">
+          <div class="card-image">
+
+            <img src="{{ url_for('static', filename='images/gplay.jpg') }}" alt="E Cycle Logo" />
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <div class="card-info-title">
+                <h3>Google Play Gift Card</h3>
+                <h4>
+                  The Google Play Gift Card is the ultimate choice for tech enthusiasts and gamers.
+                  It allows users to purchase apps, games, movies, music, and subscriptions
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="card-5">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="{{ url_for('static', filename='images/steam.jpg') }}" alt="E Cycle Logo" />
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <div class="card-info-title">
+                <h3>Steam Gift Card</h3>
+                <h4>
+                  For gamers, a Steam Gift Card is a treasure trove of endless possibilities.
+                  It provides users the access to explore and purchase the latest video games.
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="card-6">
+        <div class="card-content">
+          <div class="card-image">
+            <img src="{{ url_for('static', filename='images/amazon.jpg') }}" alt="amazon" />
+
+          </div>
+          <div class="card-info-wrapper">
+            <div class="card-info">
+              <div class="card-info-title">
+                <h3>Amazon Gift Card</h3>
+                <h4>
+                  The Amazon Gift Card is a versatile gift, offering recipients access to millions of
+                  products on the Amazon platform such as books, movies and other products.
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</body>
+<script src="{{ url_for('static', filename='js/rewards.js') }}"></script>
+
+</html>

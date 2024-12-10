@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>History</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/history.css') }}" />
+  <script src="{{ url_for('static', filename='js/history.js') }}" defer></script>
+</head>
+
+<body>
+  <header class="navbar">
+    <img src="{{ url_for('static', filename='images/logo-1.png') }}" alt="E Cycle Logo" />
+
+    <h1 class="dash-heading">Order History</h1>
+    <div class="user-info"></div>
+  </header>
+  <div class="main-container">
+    <aside class="sidebar">
+      <ul>
+        <li>
+          <a href="/dashboard/{{ current_user.username }}">
+            Home
+          </a>
+        </li>
+
+        {% if current_user.role == 'User' %}
+        <li>
+          <a href="/pickup">
+            Schedule a Pickup
+          </a>
+        </li>
+        <li>
+          <a href="/track-pickup">
+            Track my Pickup
+          </a>
+        </li>
+        <li>
+          <a href="/rewards">
+            Rewards
+          </a>
+        </li>
+        {% endif %}
+
+        {% if current_user.role == 'Delivery Partner' %}
+        <li>
+          <a href="/listen_orders">
+            Listen for Orders
+          </a>
+        </li>
+        {% endif %}
+        <li>
+          <a href="/history">
+            History
+          </a>
+        </li>
+        <li>
+          <a href="https://ewastemonitor.info/">
+            Analytics
+          </a>
+        </li>
+
+        <li>
+          <a href="/recycle-centres">
+            Recycling Centers
+          </a>
+        </li>
+
+        <li>
+          <a href="/support">
+            Help & Support
+          </a>
+        </li>
+        <li>
+          <a href="/logout">
+            Logout
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <div class="history-container">
+    </div>
+  </div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <script>
+    current_user = {
+      "user_id": "{{ current_user.user_id }}",
+      "role": "{{current_user.role}}"
+    }
+    console.log(current_user);
+  </script>
+</body>
+
+</html>

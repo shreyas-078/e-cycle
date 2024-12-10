@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Cycle - Register</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon" />
+  <script src="{{ url_for('static', filename = 'js/register.js') }}" defer></script>
+</head>
+
+<body>
+  <div id="login">
+    <div id="login-heading-div">
+      <h1 id="login-main-heading">Register to E-Cycle</h1>
+      <h3 id="login-sub-heading">
+        Register to continue your sustainable journey.
+      </h3>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <form action="/signup" method="post" id="loginForm">
+          <div class="form-group dropdown"></div>
+          <div class="dropdown">
+            <button class="dropdown-trigger" id="dropdownButton" type="button">
+              Register As ▼
+            </button>
+            <ul class="dropdown-menu" id="dropdownMenu">
+              <li class="dropdown-item" data-value="User">User</li>
+              <li class="dropdown-item" data-value="Delivery Partner">
+                Delivery Partner
+              </li>
+            </ul>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="phoneNo">Phone No:</label>
+            <input type="number" id="phno" name="phno" required minlength="10" maxlength="10" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required />
+          </div>
+          <button type="submit">Register</button>
+          <p class="helper-text" id="form-helper"></p>
+        </form>
+        <div class="links">
+          <p>Have an existing Account? <a href="/login">Login</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mouse Pointer -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</body>
+
+</html>

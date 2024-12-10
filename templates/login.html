@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Cycle - Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/x-icon" />
+  <script src="{{ url_for('static', filename = 'js/login.js') }}" defer></script>
+</head>
+
+<body>
+  <div id="login">
+    <div id="login-heading-div">
+      <h1 id="login-main-heading">Login to E-Cycle</h1>
+      <h3 id="login-sub-heading">Log in to continue your sustainable journey.</h3>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <form action="/login" method="post" id="loginForm">
+          <div class="form-group dropdown">
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-trigger" id="dropdownButton" type="button">Login As ▼</button>
+            <ul class="dropdown-menu" id="dropdownMenu">
+              <li class="dropdown-item" data-value="User">User</li>
+              <li class="dropdown-item" data-value="Delivery Partner">Delivery Partner</li>
+            </ul>
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <input type="hidden" name="login-as" id="login-as-hidden">
+          <button type="submit">Login</button>
+        </form>
+        <p id="error-message" style="display: none;">Incorrect username or password. Please try again.</p>
+        <div class="links">
+          <p>Don't have an account? <a href="/register">Register here</a>.</p>
+          <p><a href="/forgot_password_page">Forgot Password?</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mouse Pointer -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</body>
+
+</html>

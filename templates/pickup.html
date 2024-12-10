@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule A Pickup</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/pickup.css') }}" />
+  <link rel="shortcut icon" href="{{url_for('static', filename='images/logo.png')}}" type="image/x-icon">
+</head>
+
+<body>
+  <header class="navbar">
+    <img src="{{ url_for('static', filename='images/logo-1.png') }}" alt="E Cycle Logo" />
+
+    <h1 class="dash-heading">Schedule a PickUp</h1>
+    <div class="user-info"></div>
+  </header>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <ul>
+        <li>
+          <a href="/dashboard/{{ current_user.username }}">
+            Home
+          </a>
+        </li>
+
+        {% if current_user.role == 'User' %}
+        <li>
+          <a href="/pickup">
+            Schedule a Pickup
+          </a>
+        </li>
+        <li>
+          <a href="/track-pickup">
+            Track my Pickup
+          </a>
+        </li>
+
+        <li>
+          <a href="/rewards">
+            Rewards
+          </a>
+        </li>
+        {% endif %}
+
+        {% if current_user.role == 'Delivery Partner' %}
+        <li>
+          <a href="/listen_orders">
+            Listen for Orders
+          </a>
+        </li>
+        {% endif %}
+        <li>
+          <a href="/history">
+            History
+          </a>
+        </li>
+
+        <li>
+          <a href="https://ewastemonitor.info/">
+            Analytics
+          </a>
+        </li>
+
+        <li>
+          <a href="/recycle-centres">
+            Recycling Centers
+          </a>
+        </li>
+
+        <li>
+          <a href="/support">
+            Help & Support
+          </a>
+        </li>
+        <li>
+          <a href="/logout">
+            Logout
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <div class="content">
+      <div id="map"></div>
+      <div id="pickup-form">
+        <div class="pan-btn"></div>
+        <label for="items">Enter your items and let AI decide your vehicle:</label>
+        <textarea name="items" id="items" placeholder="Eg. Bent Pins Motherboard"></textarea>
+        <button id="decide-vehicle">Decide your vehicle Type</button>
+        <h3>Your vehicle Type: <span id="vehicle-type"></span></h3>
+        <label for="ph-no">Enter the Phone Number:</label>
+        <input type="tel" name="ph-no" id="ph-no" />
+        <label for="landmark">Enter the landmark:</label>
+        <input type="text" name="landmark" id="landmark" />
+        <div id="address-container" style="display: none;">
+          <label for="address">Enter your address:</label>
+          <input type="text" name="address" id="address" />
+        </div>
+        <label for="tip-amt">Enter the Tip Amount (Optional):</label>
+        <input type="number" name="tip-amt" id="tip-amt" />
+        <button id="estimate-price">Estimate Your Price</button>
+        <h3>Your price estimate: <span id="price-estimate"></span></h3>
+        <button id="book-pickup">Book Pickup</button>
+        <h3 class="order-helper"></h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mouse Pointer -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRNYfkaFI8aPMugQ30biZ1WqZWpTZTc-I&callback=initMap&loading=async&libraries=marker"
+    defer>
+    </script>
+  <script src="{{ url_for('static', filename='js/pickup.js') }}"></script>
+</body>
+
+</html>

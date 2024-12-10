@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Cycle</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}" />
+  <script src="{{ url_for('static', filename='js/landing.js') }}" defer></script>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon" />
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <nav id="top-nav">
+    <a href="/">
+      <img src="{{ url_for('static', filename='images/logo-1.png') }}" alt="E Cycle Logo" />
+    </a>
+    <div class="buttons-auth">
+      <button>
+        <a href="/login">Login</a>
+      </button>
+      <button>
+        <a href="/register">Register</a>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Heading Section -->
+  <div id="motto-div">
+    <h1 id="main-motto">Trash Tech, Earn Green!</h1>
+    <h3 id="sub-motto">
+      Transform your e-waste into rewards while saving the planet, one pickup
+      at a time.
+    </h3>
+  </div>
+
+  <!-- Cards Section -->
+  <div id="cards">
+    <div id="cards-heading-div">
+      <h1 id="cards-main-heading">What's in E-Cycle?</h1>
+      <h3 id="cards-sub-heading">
+        Explore the features that make E-Cycle the best e-waste recycling app.
+      </h3>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <i class="fa-duotone fa-apartment"></i>
+          <img src="{{ url_for('static', filename='images/truck.gif') }}" alt="Truck Gif" class="truck">
+        </div>
+        <div class="card-info-wrapper">
+          <div class="card-info">
+            <i class="fa-duotone fa-apartment"></i>
+            <div class="card-info-title">
+              <h3>Easy Pickup Booking</h3>
+              <h4>
+                Schedule your e-waste pickup effortlessly with just a few
+                taps. Choose a time and date that suits you.
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <i class="fa-duotone fa-unicorn"></i>
+          <img src="{{ url_for('static', filename='images/coin.gif') }}" alt="Coin" class="reward-coin">
+        </div>
+        <div class="card-info-wrapper">
+          <div class="card-info">
+            <i class="fa-duotone fa-unicorn"></i>
+            <div class="card-info-title">
+              <h3>Earn Rewards</h3>
+              <h4>
+                Get rewarded for being eco-friendly! Exchange your e-waste for
+                points, discounts, or cash rewards.
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <i class="fa-duotone fa-blender-phone"></i>
+          <img src="{{ url_for('static', filename='images/dispose-leaf.gif') }}" alt="Leaf Gif" class="leaf">
+        </div>
+        <div class="card-info-wrapper">
+          <div class="card-info">
+            <i class="fa-duotone fa-blender-phone"></i>
+            <div class="card-info-title">
+              <h3>Eco-Friendly Disposal</h3>
+              <h4>
+                Ensure your e-waste is disposed of responsibly and
+                sustainably. Partnered with certified recyclers.
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <i class="fa-duotone fa-person-to-portal"></i>
+          <img src="{{ url_for('static', filename='images/tracking.gif') }}" alt="Tracking Gif" class="tracking">
+        </div>
+        <div class="card-info-wrapper">
+          <div class="card-info">
+            <i class="fa-duotone fa-person-to-portal"></i>
+            <div class="card-info-title">
+              <h3>Real-Time Tracking</h3>
+              <h4>
+                Track your pickup status in real-time and stay updated on its
+                progress from pickup to recycling.
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <i class="fa-duotone fa-person-from-portal"></i>
+          <img src="{{ url_for('static', filename='images/secure.gif') }}" alt="Secure Gif" class="secure">
+        </div>
+        <div class="card-info-wrapper">
+          <div class="card-info">
+            <i class="fa-duotone fa-person-from-portal"></i>
+            <div class="card-info-title">
+              <h3>Secure Data Disposal</h3>
+              <h4>
+                Worried about data on your devices? We ensure secure data
+                destruction before recycling.
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-content">
+        <div class="card-image">
+          <i class="fa-duotone fa-otter"></i>
+          <img src="{{ url_for('static', filename='images/community.gif') }}" alt="community Gif" class="community">
+        </div>
+        <div class="card-info-wrapper">
+          <div class="card-info">
+            <i class="fa-duotone fa-otter"></i>
+            <div class="card-info-title">
+              <h3>Community Impact</h3>
+              <h4>
+                Contribute to a greener planet while supporting local
+                recycling initiatives and sustainability programs.
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action Section -->
+  <div id="cta">
+    <div id="cta-content">
+      <h1 id="cta-heading">Ready to Recycle?</h1>
+      <h3 id="cta-sub-heading">
+        Join E-Cycle today and start earning rewards for your e-waste.
+      </h3>
+      <button>
+        <a href="/register" id="get-started-btn">Get Started</a>
+      </button>
+    </div>
+
+    <!-- Powered by Ai Section -->
+    <div id="ai-div">
+      <div class="headings-ai">
+        <h1 id="ai-heading">Powered by AI</h1>
+        <h3 id="ai-sub-heading">
+          Our AI-powered platform ensures efficient and sustainable e-waste
+          recycling.
+        </h3>
+        <div class="ai-svg">
+          <img src="{{ url_for('static', filename='images/ai.gif') }}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <svg viewBox="0 0 120 28">
+      <defs>
+        <mask id="xxx">
+          <circle cx="7" cy="12" r="40" fill="#fff" />
+        </mask>
+
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="
+          1 0 0 0 0  
+          0 1 0 0 0  
+          0 0 1 0 0  
+          0 0 0 13 -9" result="goo" />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+        <path id="wave"
+          d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+      </defs>
+
+      <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2"></use>
+      <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0"></use>
+
+      <g class="topball">
+        <circle class="ball" cx="110" cy="8" r="4" stroke="none" stroke-width="0" fill="rgba(240, 240, 240)" />
+
+        <g class="arrow">
+          <polyline class="" points="108,8 110,6 112,8" fill="none" />
+          <polyline class="" points="110,6 110,10.5" fill="none" />
+        </g>
+
+      </g>
+      <g class="gooeff">
+        <circle class="drop drop1" cx="20" cy="2" r="1.8" />
+        <circle class="drop drop2" cx="25" cy="2.5" r="1.5" />
+        <circle class="drop drop3" cx="16" cy="2.8" r="1.2" />
+        <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
+    </svg>
+
+
+
+    <div class="footer-content">
+      <ul class="team-list">
+        <li>
+          <a href="https://www.linkedin.com/in/shreyas-salankimatt-83588a260/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path fill="#0A66C2"
+                d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0ZM7.12 20.48H3.56V9H7.12v11.48ZM5.34 7.43c-1.13 0-2.05-.91-2.05-2.03 0-1.12.92-2.03 2.05-2.03s2.04.91 2.04 2.03c0 1.12-.91 2.03-2.04 2.03ZM20.48 20.48h-3.56v-5.59c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.69H9.37V9h3.41v1.57h.05c.47-.9 1.61-1.85 3.32-1.85 3.56 0 4.33 2.34 4.33 5.38v6.38Z" />
+            </svg>
+          </a>
+
+          <a href="https://www.linkedin.com/in/shreyas-salankimatt-83588a260/" target="_blank" rel="noopener">
+            Shreyas Salankimatt
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/akshat-rai-4ab7392a8/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path fill="#0A66C2"
+                d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0ZM7.12 20.48H3.56V9H7.12v11.48ZM5.34 7.43c-1.13 0-2.05-.91-2.05-2.03 0-1.12.92-2.03 2.05-2.03s2.04.91 2.04 2.03c0 1.12-.91 2.03-2.04 2.03ZM20.48 20.48h-3.56v-5.59c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.69H9.37V9h3.41v1.57h.05c.47-.9 1.61-1.85 3.32-1.85 3.56 0 4.33 2.34 4.33 5.38v6.38Z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/akshat-rai-4ab7392a8/" target="_blank" rel="noopener">
+            Akshat Rai
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/pranav-s-devang-65a439288/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path fill="#0A66C2"
+                d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0ZM7.12 20.48H3.56V9H7.12v11.48ZM5.34 7.43c-1.13 0-2.05-.91-2.05-2.03 0-1.12.92-2.03 2.05-2.03s2.04.91 2.04 2.03c0 1.12-.91 2.03-2.04 2.03ZM20.48 20.48h-3.56v-5.59c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.69H9.37V9h3.41v1.57h.05c.47-.9 1.61-1.85 3.32-1.85 3.56 0 4.33 2.34 4.33 5.38v6.38Z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/pranav-s-devang-65a439288/" target="_blank" rel="noopener">
+            Pranav S Devang
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/ashray-chaitanya-8b605b288/" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path fill="#0A66C2"
+                d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0ZM7.12 20.48H3.56V9H7.12v11.48ZM5.34 7.43c-1.13 0-2.05-.91-2.05-2.03 0-1.12.92-2.03 2.05-2.03s2.04.91 2.04 2.03c0 1.12-.91 2.03-2.04 2.03ZM20.48 20.48h-3.56v-5.59c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.69H9.37V9h3.41v1.57h.05c.47-.9 1.61-1.85 3.32-1.85 3.56 0 4.33 2.34 4.33 5.38v6.38Z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/ashray-chaitanya-8b605b288/" target="_blank" rel="noopener">
+            Ashray Chaitanya
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Mouse Pointer -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Cycle</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/analytics.css') }}" />
+  <script src="{{ url_for('static', filename='js/support.js') }}" defer></script>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon" />
+</head>
+
+<body>
+  <header class="navbar">
+    <img src="{{ url_for('static', filename='images/logo-1.png') }}" alt="E Cycle Logo" />
+
+    <h1 class="dash-heading">Support and Help</h1>
+    <div class="user-info">
+      <div>
+  </header>
+  <div class="dashboard-container">
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <ul>
+          <li>
+            <a href="/dashboard/{{ current_user.username }}">
+              Home
+            </a>
+          </li>
+
+          {% if current_user.role == 'User' %}
+          <li>
+            <a href="/pickup">
+              Schedule a Pickup
+            </a>
+          </li>
+          <li>
+            <a href="/track-pickup">
+              Track my Pickup
+            </a>
+          </li>
+          <li>
+            <a href="/rewards">
+              Rewards
+            </a>
+          </li>
+          {% endif %}
+
+          {% if current_usr.role == 'Delivery Partner' %}
+          <li>
+            <a href="/listen_orders">
+              Listen for Orders
+            </a>
+          </li>
+          {% endif %}
+          <li>
+            <a href="/history">
+              History
+            </a>
+          </li>
+          <li>
+            <a href="https://ewastemonitor.info/">
+              Analytics
+            </a>
+          </li>
+
+          <li>
+            <a href="/recycle-centres">
+              Recycling Centers
+            </a>
+          </li>
+
+          <li>
+            <a href="/support">
+              Help & Support
+            </a>
+          </li>
+          <li>
+            <a href="/logout">
+              Logout
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <div id="support-main">
+        <div class="support-heading-div">
+          <h3 id="support-sub-heading">Need assistance? Explore our Support and Help Center for answers to your
+            questions and personalized assistance.</h3>
+
+          <h2 id="support-main-heading">FAQ's</h2>
+          <div class="card-enclose">
+            <button class="accordion">How do I reset my password?</button>
+            <div class="panel">
+              <p>To reset your password, click on the "Forgot Password" link on the login page. Enter your registered
+                email address, and we’ll send you instructions to create a new password.</p>
+            </div>
+
+            <button class="accordion">How can I contact customer support?</button>
+            <div class="panel">
+              <p> You can reach us via email at support@example.com, call us at 1-800-123-4567, or use our live chat
+                feature available on our website during business hours.
+              </p>
+            </div>
+
+            <button class="accordion"> What payment methods do you accept?</button>
+            <div class="panel">
+              <p> We accept major credit cards (Visa, MasterCard, American Express), PayPal, and other regional
+                payment
+                methods depending on your location. Visit our Payment Options page for more details.</p>
+              </button>
+            </div>
+          </div>
+          <h2 id="support-main-heading">Contact Us</h2>
+          <div class="details">
+            <form action="/" method="">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+              </div>
+              <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" id="lname" name="lastname" placeholder="Country">
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <textarea type="text" id="text" name="subject" placeholder="Write something.."
+                  style="height:170px"></textarea>
+              </div>
+
+              <button type="submit">Submit</button>
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mouse Pointer -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</body>
+
+</html>

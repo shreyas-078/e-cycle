@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+:root {
+  --bg-color: rgb(20, 20, 20);
+  --card-color: rgb(23, 23, 23);
+  --card-bg-color: rgba(255, 255, 255, 0.1);
+  --card-bg-color-before: rgba(255, 255, 255, 0.06);
+  --card-bg-color-after: rgba(255, 255, 255, 0.4);
+  --border-color: rgba(255, 255, 255, 0.2);
+  --span-white: rgba(240, 240, 240);
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--bg-color);
+}
+
+iframe {
+  width: 95vw;
+  height: 95vh;
+  border: none;
+}
+
+.notif-no {
+  font-family: "Geist", sans-serif;
+  position: absolute;
+  top: 0;
+  left: 25vw;
+  right: 25vw;
+  color: var(--span-white);
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+#back-home {
+  position: absolute;
+  top: 15vh;
+  left: 20vw;
+  right: 25vw;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--span-white);
+  font-family: "Geist", sans-serif;
+  font-weight: 500;
+}

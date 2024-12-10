@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/signup_complete.css') }}" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup Complete</title>
+
+</head>
+
+<body>
+  <h1>Signup Complete</h1>
+  <p>Redirecting in <span id="countdown">5</span> seconds...</p>
+  <div class="gif">
+    <img src="{{ url_for('static', filename='images/signup_complete.gif') }}" alt="thumbs Gif" />
+  </div>
+</body>
+
+<script>
+  let countdown = 5;
+  const countdownElement = document.getElementById("countdown");
+
+  const intervalId = setInterval(() => {
+    if (countdown > 1) {
+      countdown--;
+      countdownElement.textContent = countdown;
+    } else {
+      countdownElement.textContent = "0";
+      clearInterval(intervalId);
+      window.location.href = "/login";
+    }
+  }, 1000);
+</script>
+
+</html>

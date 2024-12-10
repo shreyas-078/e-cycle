@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Cycle</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/support.css') }}" />
+  <script src="{{ url_for('static', filename='js/support.js') }}" defer></script>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon" />
+</head>
+
+<body>
+  <header class="navbar">
+    <img src="{{ url_for('static', filename='images/logo-1.png') }}" alt="E Cycle Logo" />
+
+    <h1 class="dash-heading"> Help & Support</h1>
+    <div class="user-info">
+      <div>
+  </header>
+  <div class="dashboard-container">
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <ul>
+          <li>
+            <a href="/dashboard/{{ current_user.username }}">
+              Home
+            </a>
+          </li>
+
+          {% if current_user.role == 'User' %}
+          <li>
+            <a href="/pickup">
+              Schedule a Pickup
+            </a>
+          </li>
+          <li>
+            <a href="/track-pickup">
+              Track my Pickup
+            </a>
+          </li>
+
+          <li>
+            <a href="/rewards">
+              Rewards
+            </a>
+          </li>
+          {% endif %}
+
+          {% if current_user.role == 'Delivery Partner' %}
+          <li>
+            <a href="/listen_orders">
+              Listen for Orders
+            </a>
+          </li>
+          {% endif %}
+          <li>
+            <a href="/history">
+              History
+            </a>
+          </li>
+
+          <li>
+            <a href="https://ewastemonitor.info/">
+              Analytics
+            </a>
+          </li>
+
+          <li>
+            <a href="/recycle-centres">
+              Recycling Centers
+            </a>
+          </li>
+
+          <li>
+            <a href="/support">
+              Help & Support
+            </a>
+          </li>
+          <li>
+            <a href="/logout">
+              Logout
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <div id="support-main">
+        <div class="support-heading-div">
+          <h3 id="support-sub-heading">Need assistance? Explore our Support and Help Center for answers to your
+            questions and personalized assistance.</h3>
+
+          <h2 id="support-main-heading">FAQ's</h2>
+          <div class="card-enclose">
+            <button class="accordion">How do I reset my password?</button>
+            <div class="panel">
+              <p>To reset your password, click on the "Forgot Password" link on the login page. Enter your registered
+                email address, and we’ll send you instructions to create a new password.</p>
+            </div>
+
+            <button class="accordion"> What payment methods do you accept?</button>
+            <div class="panel">
+              <p> We accept major credit cards (Visa, MasterCard, American Express), PayPal, and other regional
+                payment
+                methods depending on your location. Visit our Payment Options page for more details.</p>
+            </div>
+            <button class="accordion">What is this website about?</button>
+            <div class="panel">
+              <p>This website is designed to provide [services/products/information]. You can explore Analytics
+                to learn more.</p>
+            </div>
+            <button class="accordion">Do I need to create an account to use the website?</button>
+            <div class="panel">
+              <p>Some features may require you to create an account, while others are accessible without signing up.</p>
+            </div>
+            <button class="accordion">Is my personal information secure?</button>
+            <div class="panel">
+              <p>Yes, we prioritize your privacy and use [encryption/security measures] to ensure your data is safe.</p>
+            </div>
+            <button class="accordion">What should I do if I encounter a bug or issue?</button>
+            <div class="panel">
+              <p>Please report any bugs or issues using our report form or contact our support team with details.</p>
+            </div>
+          </div>
+          <h2 class="contact-cutsomer-support">Contact Customer Care</h2>
+          <p class="customer-support"> You can reach out to us via email at ecycle63@gmail.com, or call us at
+            9886473228.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mouse Pointer -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</body>
+
+</html>

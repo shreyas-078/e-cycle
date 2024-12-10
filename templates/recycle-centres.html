@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/recycle-centre.css') }}" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo.png') }}" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rewards</title>
+</head>
+<header class="navbar">
+  <img src="{{ url_for('static', filename='images/logo-1.png') }}" alt="E Cycle Logo" />
+
+  <h1 class="dash-heading">Recycling Centres</h1>
+  <div class="user-pts-container"> <span id="user-pts"></span></div>
+</header>
+
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <ul>
+        <li>
+          <a href="/dashboard/{{ current_user.username }}">
+            Home
+          </a>
+        </li>
+
+        {% if role == 'User' %}
+        <li>
+          <a href="/pickup">
+            Schedule a Pickup
+          </a>
+        </li>
+        <li>
+          <a href="/track-pickup">
+            Track my Pickup
+          </a>
+        </li>
+
+        <li>
+          <a href="/rewards">
+            Rewards
+          </a>
+        </li>
+        {% endif %}
+
+        {% if role == 'Delivery Partner' %}
+        <li>
+          <a href="/listen_orders">
+            Listen for Orders
+          </a>
+        </li>
+        {% endif %}
+        <li>
+          <a href="/history">
+            History
+          </a>
+        </li>
+
+        <li>
+          <a href="https://ewastemonitor.info/">
+            Analytics
+          </a>
+        </li>
+
+        <li>
+          <a href="/recycle-centres">
+            Recycling Centers
+          </a>
+        </li>
+
+        <li>
+          <a href="/support">
+            Help & Support
+          </a>
+        </li>
+        <li>
+          <a href="/logout">
+            Logout
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <div id="cards">
+      <a href="https://ewasteindia.com/" style="text-decoration: none; color: inherit;">
+        <div class="card" id="card-1">
+          <div class="card-content">
+            <div class="card-image">
+              <img src="{{ url_for('static', filename='images/eparisaraa.jpg') }}" />
+            </div>
+            <div class="card-info-wrapper">
+              <div class="card-info">
+                <div class="card-info-title">
+                  <h3>E Parisaraa</h3>
+                  <h4>
+                    E-Parisaraa Pvt. Ltd, India's first Government authorized electronic waste recycler started
+                    operations
+                    from September 2005, is engaged in handling,
+                    recycling and reusing of Waste Electrical and Electronic Equipment (WEEE) in eco friendly way.
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="https://www.recycleinme.com/rim-kgnandini/home" style="text-decoration: none; color: inherit;">
+        <div class="card" id="card-2">
+          <div class="card-content">
+            <div class="card-image">
+              <img src="{{ url_for('static', filename='images/kg-ent-1.png') }}" alt="E Cycle Logo" />
+            </div>
+            <div class="card-info-wrapper">
+              <div class="card-info">
+                <div class="card-info-title">
+                  <h3>KG NANDINI ENTERPRISES</h3>
+                  <h4>
+                    KG Nandini Enterprises, We have Installed “Plastic Recycling Plant - NGR RECYCLING”
+                    & "E-waste recycling plant - SWISSRTEC SWITTZERLAND", with a European Technology in INDIA in the
+                    name of KG Nandini Enterprises, Located at Mysore Road, Bidadi, Bangalore
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://sonalmetacop.com/" style="text-decoration: none; color: inherit;">
+        <div class="card" id="card-3">
+          <div class="card-content">
+            <div class="card-image">
+              <img src="{{ url_for('static', filename='images/sonalmetacop.png') }}" alt="E Cycle Logo" />
+            </div>
+            <div class="card-info-wrapper">
+              <div class="card-info">
+                <div class="card-info-title">
+                  <h3>Sonal Metacop</h3>
+                  <h4>
+                    Established in 2015 and based in Bengaluru is a leading e-waste management
+                    company specializing in secure and certified destruction of unwanted electronic waste. The company
+                    offers comprehensive Waste Electrical and Electronic Equipment (WEEE)
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+</body>
+<script src="{{ url_for('static', filename='js/rewards.js') }}"></script>
+
+</html>
